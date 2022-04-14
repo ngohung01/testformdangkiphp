@@ -1,0 +1,34 @@
+<?php
+$check=true;
+$fullname=$username=$password=$confirmpassword=$email=$date=$gender=$phonenumber=$address='';
+if(isset($_POST['fullname'])){
+    $fullname=$_POST['fullname'];
+}
+if(isset($_POST['username'])){
+    $username=$_POST['username'];
+}
+if(isset($_POST['password'])){
+    $password=$_POST['password'];
+}
+if(isset($_POST['confirmpassword'])){
+    $confirmpassword=$_POST['confirmpassword'];
+}
+if(isset($_POST['email'])){
+    $email=$_POST['email'];
+}
+if(isset($_POST['date'])){
+    $date=$_POST['date'];
+}
+if(isset($_POST['gender'])){
+    $gender=$_POST['gender'];
+}
+if(isset($_POST['phonenumber'])){
+    $phonenumber=$_POST['phonenumber'];
+}
+if(isset($_POST['address'])){
+    $address=$_POST['address'];
+}
+if(!empty($username)&&!empty($password)&&$password==$confirmpassword){
+   header("Location: login.php?username=$username&password=$password");
+   die();
+}
